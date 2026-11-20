@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    color: #f5b800;
+    font-size: 22px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-icon {
+    font-size: 19px;
+    color: #777777;
+    cursor: pointer;
+}
+
+.nav-icon.active {
+    color: #f5b800;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logout-link {
+    color: #777777;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-avatar-box {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.nav-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: #131313;
+    border: 1px solid #222222;
+    border-radius: 16px;
+    padding: 28px 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #f5b800;
+    object-fit: cover;
+}
+
+.edit-avatar-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background-color: #f5b800;
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 11px;
+    height: 11px;
+    background-color: #f5b800;
+    border-radius: 50%;
+}
+
+.online-dot.small {
+    width: 7px;
+    height: 7px;
+    bottom: 0;
+    right: 0;
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.profile-handle {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.profile-stats {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.profile-stats span {
+    color: #f5b800;
+    font-weight: bold;
+}
+
+.edit-profile-btn {
+    background-color: #f5b800;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+    opacity: 0.9;
+}
+
+/* Friends Card */
+.friends-card {
+    width: 340px;
+    max-width: 100%;
+    background-color: #131313;
+    border: 1px solid #222222;
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 24px;
+}
+
+.card-title {
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+
+.friend-item {
+    background-color: #1c1c1e;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.friend-item:last-child {
+    margin-bottom: 0;
+}
+
+.letter-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #2a2315;
+    color: #f5b800;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.friend-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.friend-name {
+    color: #f5b800;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.friend-handle {
+    color: #888888;
+    font-size: 12px;
+}
