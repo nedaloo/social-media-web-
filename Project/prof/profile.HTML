@@ -12,19 +12,18 @@
     <nav class="navbar">
         <div class="nav-left">
             <i class="bi bi-hexagon logo-icon"></i>
-            <span class="logo-text">Hive</span>
+            <span class="logo-text" href="../Home/index.html" aria-label="Hive home" title="Hive home page">Hive</span>
         </div>
 
         <div class="nav-center">
-            <i class="bi bi-chat-left-text nav-icon active"></i>
-            <i class="bi bi-people nav-icon"></i>
+            <i class="bi bi-chat-left-text nav-icon active" onclick="openchat()"></i>
+            <i class="bi bi-people nav-icon" onclick="opengroup()"></i>
         </div>
 
         <div class="nav-right">
-            <a href="#" class="logout-link">Log out</a>
+            <a href="../log in/index .html" class="logout-link">Log out</a>
             <div class="nav-avatar-box">
-                <img src="avatar.png" alt="Uruma" class="nav-avatar">
-                <span class="online-dot small"></span>
+                <button class="nav-avatar" title="Profile"><img class="nav-avatar" src="Uruma.png" alt="Uruma" width="36px" height="36px"></button>
             </div>
         </div>
     </nav>
@@ -37,7 +36,6 @@
                     <span class="edit-avatar-badge">
                         <i class="bi bi-pencil"></i>
                     </span>
-                    <span class="online-dot"></span>
                 </div>
 
                 <div class="profile-info">
@@ -47,14 +45,14 @@
                 </div>
             </div>
 
-            <button class="edit-profile-btn">Edit Profile</button>
+          <button class="edit-profile-btn" type="button" onclick="editProfile()">Edit Profile</button>
         </section>
 
         <section class="friends-card">
             <h3 class="card-title">Friends</h3>
 
             <div class="friend-item">
-                <div class="letter-avatar">a</div>
+                <img class="avatar" src="blank-profile-pic.png" alt="user-picture">
                 <div>
                     <p class="friend-name">ahmed magdy</p>
                     <p class="friend-handle">@hamado000</p>
@@ -62,7 +60,7 @@
             </div>
 
             <div class="friend-item">
-                <div class="letter-avatar">m</div>
+                <img class="avatar" src="blank-profile-pic.png" alt="user-picture">
                 <div>
                     <p class="friend-name">mahmoud</p>
                     <p class="friend-handle">@mahmoud</p>
@@ -70,7 +68,7 @@
             </div>
 
             <div class="friend-item">
-                <img src="nedal.png" alt="Nedal Tarek" class="friend-avatar">
+                <img src="blank-profile-pic.png" alt="Nedal Tarek" class="avatar">
                 <div>
                     <p class="friend-name">Nedal Tarek</p>
                     <p class="friend-handle">@nedal.m.tarek</p>
@@ -78,6 +76,7 @@
             </div>
         </section>
     </main>
-
+<script src="./profile.js"></script>
+<script src="../Home/net-speed.js"></script>
 </body>
 </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hive - Groups</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="group.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-left">
+      <a class="brand" href="index.html" aria-label="Hive home" title="Hive home page">
+        <i class="bi bi-hexagon hive-icon logo-icon"></i>
+        <span class="logo-text">Hive</span>
+      </a>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html" aria-label="Chats">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="count">3</span>
+      </a>
+      <a class="nav-item-active" href="group.html" aria-label="Groups" aria-current="page">
+        <i class="bi bi-people"></i>
+      </a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="avatar" type="button" aria-label="Profile" onclick="openProfile()">
+        <img src="../prof/Uruma.png" alt="Profile" />
+      </button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-heading">
+        <div>
+          <h1>Groups</h1>
+          <p id="group-count">4 active groups</p>
+        </div>
+        <button class="add" type="button" aria-label="New group" onclick="newGroup()">+</button>
+      </div>
+
+      <div class="chat-list">
+        <button class="chat-row active" type="button">
+          <img class="avatar" src="blank-profile-pic.png" alt="Design Squad" />
+          <div>
+            <div>
+              <strong>Design Squad</strong>
+              <time>4:12 PM</time>
+            </div>
+            <div>
+              <span>Farah: Are we still reviewing the dark palette?</span>
+              <b>2</b>
+            </div>
+          </div>
+        </button>
+
+        <button class="chat-row" type="button">
+          <img class="avatar" src="blank-profile-pic.png" alt="Code & Algorithms" />
+          <div>
+            <div>
+              <strong>Code &amp; Algorithms</strong>
+              <time>3:48 PM</time>
+            </div>
+            <div>
+              <span>Omar: Pushed the new solution to the repo.</span>
+              <b>1</b>
+            </div>
+          </div>
+        </button>
+
+        <button class="chat-row" type="button">
+          <img class="avatar" src="blank-profile-pic.png" alt="Web Builders" />
+          <div>
+            <div>
+              <strong>Web Builders</strong>
+              <time>2:15 PM</time>
+            </div>
+            <div>
+              <span>Sarah: Layout spacing looks super clean.</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="chat-row" type="button">
+          <img class="avatar" src="blank-profile-pic.png" alt="Media & Content" />
+          <div>
+            <div>
+              <strong>Media &amp; Content</strong>
+              <time>Yesterday</time>
+            </div>
+            <div>
+              <span>Yara: Draft is ready for the team.</span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </aside>
+
+    <section class="conversation" aria-label="Group conversation">
+      <header class="conversation-head">
+        <div class="person">
+          <img class="avatar" src="blank-profile-pic.png" alt="Design Squad" />
+          <div>
+            <h2>Design Squad <small id="member-count" onclick="memberPop()">3 members</small></h2>
+            <p><span>4 online now</span></p>
+          </div>
+        </div>
+        <button type="button" onclick="addMember()" class="add-member-btn">+ Add Member</button>
+      </header>
+
+      <div class="messages">
+        <div class="message">
+          <img class="avatar" src="blank-profile-pic.png" alt="Farah" />
+          <div>
+            <span class="sender-label">Farah</span>
+            <div>Hey everyone! Are we still reviewing the dark mode palette today?</div>
+            <time>4:05 PM</time>
+          </div>
+        </div>
+
+        <div class="message sent">
+          <div>
+            <div>Yes! Obsidian surface with amber accents is locked in.</div>
+            <time>4:08 PM</time>
+          </div>
+        </div>
+
+        <div class="message">
+          <img class="avatar" src="blank-profile-pic.png" alt="Marcus" />
+          <div>
+            <span class="sender-label">Marcus</span>
+            <div>The contrast and borders look super sharp on dark mode.</div>
+            <time>4:11 PM</time>
+          </div>
+        </div>
+
+        <div class="message">
+          <img class="avatar" src="blank-profile-pic.png" alt="Farah" />
+          <div>
+            <span class="sender-label">Farah</span>
+            <div>Are we still reviewing the dark palette?</div>
+            <time>4:12 PM</time>
+          </div>
+        </div>
+      </div>
+
+      <form class="composer" onsubmit="send(event); return false;">
+        <div class="input-wrap">
+          <input class="message-input" type="text" placeholder="write message" aria-label="write message" />
+          <button class="send-btn" type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src="group.js"></script>
+  <script src="./net-speed.js"></script>
+</body>
+</html>

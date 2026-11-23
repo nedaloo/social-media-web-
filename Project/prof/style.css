@@ -35,8 +35,11 @@ body {
 }
 
 @keyframes rotate {
-    0%{
-        transform:rotate(360deg);
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -80,10 +83,10 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #ffb800;
+    color: #888888;
     font-size: 22px;
     position: relative;
-    border-bottom: 3px solid #ffb800;
+    
 }
 
 .nav-icon.active:hover {
@@ -271,4 +274,113 @@ body {
 .friend-handle {
     color: #888888;
     font-size: 12px;
+}
+/* .bi bi-chat-left-text nav-icon active{
+    color: #888888;
+} */
+ .popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: #121214;
+    color: #f5f5f6;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #252528;
+    width: min(92vw, 370px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-content h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    color: #ffb800;
+}
+
+.popup-content label {
+    font-size: 13px;
+    color: #8496b1;
+}
+
+.edit-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.edit-avatar-preview {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffb800;
+    flex-shrink: 0;
+}
+
+.change-photo-btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid #252528;
+    background: #1c1c1f;
+    color: #ffb800;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 120ms ease;
+}
+
+.change-photo-btn:hover {
+    background: #242429;
+    border-color: #ffb800;
+}
+
+.popup-content input[type="text"] {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #252528;
+    background: #09090b;
+    color: #f5f5f6;
+    font: inherit;
+    outline: none;
+}
+
+.popup-content input[type="text"]:focus {
+    border-color: #ffb800;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.popup-buttons button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 0;
+    background: #ffb800;
+    color: #17120a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 120ms ease;
+}
+
+.popup-buttons button:hover {
+    filter: brightness(1.08);
+}
+
+.popup-buttons .close {
+    background: #1c1c1f;
+    color: #f5f5f6;
 }
