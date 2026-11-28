@@ -1,6 +1,7 @@
-﻿* {
+* {
     box-sizing: border-box;
 }
+.popup-error { color: #ef4444; min-height: 1.2em; margin: 8px 0; }
 
 body {
     margin: 0;
@@ -8,6 +9,19 @@ body {
     color: #f5f5f6;
     font: 14px/1.4 Inter, system-ui, sans-serif;
     min-height: 100vh;
+}
+
+.empty-state {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    text-align: center;
+    color: #929298;
+}
+
+.empty-state h2 {
+    margin: 0 0 8px;
+    color: #f5f5f6;
 }
 
 .hive-icon {
@@ -45,6 +59,13 @@ body {
     animation: rotate 3.5s linear 0s infinite normal;
 }
 
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
 .logo-text {
     font-size: 22px;
     letter-spacing: -.7px;
@@ -67,8 +88,9 @@ body {
 }
 
 .nav-item {
-    transition: all 0.2s ease;
-    width: 42px;
+    transition: color 0.2s ease, background-size 0.35s ease;
+    min-width: 42px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,11 +98,16 @@ body {
     color: #929298;
     font-size: 22px;
     position: relative;
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 .nav-item-active {
-    transition: all 0.2s ease;
-    width: 42px;
+    transition: color 0.2s ease, background-size 0.35s ease;
+    min-width: 42px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,11 +116,49 @@ body {
     font-size: 22px;
     position: relative;
     border-bottom: 3px solid #ffb800;
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 .nav-item:hover,
 .nav-item-active:hover {
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #ffb800);
+    background-size: 100% 100%;
+}
+
+.topbar > .top-actions > .avatar {
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
+    transition: background-size 0.35s ease, transform 0.2s ease;
+}
+
+.topbar > .top-actions > .avatar:hover {
+    background-size: 100% 100%;
+}
+
+.topbar > .top-actions > .avatar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.topbar > .top-actions > .avatar:hover::after {
+    transform: scaleY(1);
+}
+
+.topbar > .top-actions > .avatar img {
+    position: relative;
+    z-index: 2;
 }
 
 .nav-left {
@@ -108,7 +173,9 @@ body {
     font-weight: 700;
     background: #ffb800;
     color: #17120a;
-    width: 21px;
+    min-width: 21px;
+    width: auto;
+    padding: 0 6px;
     height: 18px;
     border-radius: 10px;
     display: grid;
@@ -244,10 +311,6 @@ body {
     white-space: nowrap;
 }
 
-.chat-row:first-child strong {
-    color: #ffb800;
-}
-
 .sidebar time {
     font-size: 12px;
     color: #8496b1;
@@ -300,12 +363,7 @@ body {
     display: block;
 }
 
-.chat-row:nth-child(1) .avatar,
-.chat-row:nth-child(4) .avatar {
-    border-color: #ffb800;
-}
-
-.person > .avatar {
+.person .avatar {
     border-color: #ffb800;
     width: 52px;
     height: 52px;
@@ -352,6 +410,22 @@ body {
     gap: 12px;
 }
 
+.profile-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-link:hover h2 {
+    color: #ffb800;
+}
+
+.profile-link:hover .avatar {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+}
+
 .person h2 {
     font-size: 18px;
     margin: 0 0 2px;
@@ -367,19 +441,16 @@ body {
 
 .person p {
     margin: 0;
-    color: #ffb800;
+    color: #8496b1;
     font-size: 13px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
-.person p span::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #42d392;
-    margin-right: 5px;
+.person p .status-text.online,
+.person p .status-text.typing {
+    color: #ffb800;
 }
 
 .add-member-btn {
@@ -778,3 +849,6 @@ body {
 .chat-row.active strong {
     color: #ffb800;
 }
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#8b8b8b}.status-dot.online{background:#22c55e}.status-dot.typing{background:#ffb800}.status-dot.offline{background:#8b8b8b}
+.read-state{display:block;font-size:11px;color:#898991;text-align:right;margin:4px 4px 0}
+.read-state.seen{color:#42d392;font-weight:600}

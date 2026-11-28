@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <title>Hive - Direct Messages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-left">
+      <i class="bi bi-hexagon logo-icon" aria-label="Hive home" title="Hive home page"></i>
+      <span class="logo-text">Hive</span>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-item-active" href="index.html" aria-label="Messages" title="Chats" aria-current="page">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="count" id="chats-unread-count">0</span>
+      </a>
+      <a class="nav-item" href="group.html" aria-label="People" title="Group chats">
+        <i class="bi bi-people"></i>
+        <span class="count" id="groups-unread-count">0</span>
+      </a>
+    </nav>
+    <div class="top-actions"><button class="avatar" aria-label="Open profile" title="Profile" onclick="openProfile()"><img src="../prof/blank-profile-pic.png" alt="user-picture" width="36px" height="36px"></button></div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-heading"><div><h1>Direct Messages</h1><p>0 online now</p></div><button class="add" aria-label="New message" onclick="newConversation()">+</button></div>
+
+      <div class="chat-list" aria-live="polite"><p>Loading conversations...</p></div>
+    </aside>
+
+    <section class="conversation" aria-label="Conversation">
+      <div class="messages"></div>
+    </section>
+  </main>
+  <script src="./script.js" defer ></script>
+  <script src="./realtime.js" defer></script>
+  <script src="./net-speed.js"></script>
+</body>
+</html>

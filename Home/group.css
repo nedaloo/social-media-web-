@@ -3,6 +3,7 @@
 *::after {
     box-sizing: border-box;
 }
+.popup-error { color: #ef4444; min-height: 1.2em; margin: 8px 0; }
 
 body {
     margin: 0;
@@ -10,6 +11,19 @@ body {
     color: #f5f5f6;
     font: 14px/1.4 Inter, system-ui, sans-serif;
     min-height: 100vh;
+}
+
+.empty-state {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    text-align: center;
+    color: #929298;
+}
+
+.empty-state h2 {
+    margin: 0 0 8px;
+    color: #f5f5f6;
 }
 
 .hive-icon {
@@ -77,8 +91,9 @@ body {
 }
 
 .nav-item {
-    transition: all 0.2s ease;
-    width: 42px;
+    transition: color 0.2s ease, background-size 0.35s ease;
+    min-width: 42px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,11 +101,16 @@ body {
     color: #929298;
     font-size: 22px;
     position: relative;
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 .nav-item-active {
-    transition: all 0.2s ease;
-    width: 42px;
+    transition: color 0.2s ease, background-size 0.35s ease;
+    min-width: 42px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,11 +119,49 @@ body {
     font-size: 22px;
     position: relative;
     border-bottom: 3px solid #ffb800;
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 .nav-item:hover,
 .nav-item-active:hover {
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #ffb800);
+    background-size: 100% 100%;
+}
+
+.topbar > .top-actions > .avatar {
+    background-image: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
+    transition: background-size 0.35s ease, transform 0.2s ease;
+}
+
+.topbar > .top-actions > .avatar:hover {
+    background-size: 100% 100%;
+}
+
+.topbar > .top-actions > .avatar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to top, #ffb800 0%, #09090b 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.topbar > .top-actions > .avatar:hover::after {
+    transform: scaleY(1);
+}
+
+.topbar > .top-actions > .avatar img {
+    position: relative;
+    z-index: 2;
 }
 
 .nav-left {
@@ -117,7 +175,9 @@ body {
     font-weight: 700;
     background: #ffb800;
     color: #17120a;
-    width: 21px;
+    min-width: 21px;
+    width: auto;
+    padding: 0 6px;
     height: 18px;
     border-radius: 10px;
     display: grid;
@@ -284,8 +344,6 @@ body {
     display: block;
 }
 
-.chat-row:nth-child(1) .avatar,
-.chat-row:nth-child(4) .avatar,
 .chat-row.active .avatar {
     border-color: #ffb800;
 }
@@ -352,19 +410,16 @@ body {
 
 .person p {
     margin: 0;
-    color: #ffb800;
+    color: #8496b1;
     font-size: 13px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
-.person p span::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #42d392;
-    margin-right: 5px;
+.person p .status-text.online,
+.person p .status-text.typing {
+    color: #ffb800;
 }
 
 .add-member-btn {
@@ -676,7 +731,57 @@ body {
 }
 
 #member-count {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #8496b1;
     cursor: pointer;
+}
+
+#member-count:hover {
+    color: #ffb800;
+    text-decoration: underline;
+}
+
+.members-popup .popup-content {
+    width: min(92vw, 390px);
+}
+
+.members-popup-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.members-popup-head h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #ffb800;
+}
+
+.members-close {
+    border: 0;
+    background: transparent;
+    color: #8496b1;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.member-info {
+    color: inherit;
+    text-decoration: none;
+}
+
+.member-info:hover .member-name {
+    color: #ffb800;
+}
+
+.member-owner {
+    color: #8496b1;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
 }
 
 .member-list {
@@ -750,3 +855,6 @@ body {
     text-align: center;
     margin: 8px 0;
 }
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#8b8b8b}.status-dot.online{background:#22c55e}.status-dot.typing{background:#ffb800}.status-dot.offline{background:#8b8b8b}
+.read-state{margin-left:6px;font-size:11px;color:#898991}
+.read-state.seen{color:#42d392;font-weight:600}

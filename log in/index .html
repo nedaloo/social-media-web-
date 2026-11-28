@@ -25,12 +25,12 @@
             <p class="subtitle">Log in with your permanent username and password.</p>
 
             <!-- Login Form -->
-            <form>
+            <form data-auth="login">
                 <p class="form-label"><b>Username</b></p>
-                <input class="form-input" type="text" placeholder="Your username">
+                <input class="form-input" name="username" type="text" placeholder="Your username" required>
 
                 <p class="form-label"><b>Password</b></p>
-                <input class="form-input" type="password" placeholder="Your password">
+                <input class="form-input" name="password" type="password" placeholder="Your password" required>
 
                 <button class="login-btn" type="submit"><b>Log In</b></button>
             </form>
@@ -45,5 +45,6 @@
 
     </div>
 
+    <script src="../auth/auth.js"></script>
 </body>
 </html>

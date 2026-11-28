@@ -6,7 +6,6 @@ body {
     color: #e0e0e0;
 }
 
-/* ===== Page Container ===== */
 .page-container {
     display: flex;
     flex-flow: column nowrap;
@@ -14,31 +13,29 @@ body {
     padding: 80px 0 0 0;
 }
 
-/* ===== Logo ===== */
 .logo-section {
     text-align: center;
-    margin-left: 120px;
-    margin-bottom: 30px;
+    margin: 0 0 30px 0;
 }
 .logo-icon {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 0 0 420px;
+    text-decoration: none;
+    color: inherit;
 }
-.logo-circle {
+.logo {
     width: 30px;
     height: 30px;
-    border: 2px solid #FFB800;
     border-radius: 50%;
-    margin: 0 10px 0 0;
+    margin-left: 120px;
 }
 .logo-text {
     color: #e0e0e0;
     font-size: 26px;
 }
 
-/* ===== Signup Card ===== */
-.signup-card {
+.login-card {
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
     border-radius: 16px;
@@ -47,56 +44,47 @@ body {
     margin: 0 auto;
 }
 
-/* ===== Tagline ===== */
+
 .tagline {
     color: #FFB800;
     font-size: 12px;
     margin: 0 0 8px 0;
 }
 
-/* ===== Heading ===== */
-.page-title {
+.welcome-title {
     color: #e0e0e0;
     font-size: 24px;
     margin: 0 0 8px 0;
 }
 
-/* ===== Subtitle ===== */
+
 .subtitle {
     color: #888;
     font-size: 14px;
     margin: 0 0 25px 0;
 }
 
-/* ===== Form Labels ===== */
+
 .form-label {
     color: #e0e0e0;
     font-size: 14px;
     margin: 0 0 6px 0;
 }
 
-/* ===== Input Fields ===== */
 .form-input {
     width: 100%;
     padding: 12px 14px;
     background-color: #2a2a2a;
     border: 1px solid #333;
     border-radius: 8px;
-    color: #e0dfdf;
+    color: #e9e8e8;
     font-size: 14px;
     font-family: Arial, sans-serif;
-    margin: 0 0 5px 0;
-}
-
-/* ===== Hint Text ===== */
-.hint-text {
-    color: #666;
-    font-size: 12px;
     margin: 0 0 18px 0;
 }
 
-/* ===== Create Button ===== */
-.create-btn {
+
+.login-btn {
     width: 100%;
     padding: 12px 0;
     background-color: #FFB800;
@@ -108,16 +96,16 @@ body {
     margin: 8px 0 0 0;
 }
 
-/* ===== Login Link Section ===== */
-.login-section {
+
+.signup-section {
     text-align: center;
     margin: 22px 0 0 0;
 }
-.login-text {
+.signup-text {
     color: #888;
     font-size: 14px;
 }
-.login-link {
+.signup-link {
     color: #FFB800;
     font-size: 14px;
 }

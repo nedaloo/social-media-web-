@@ -34,6 +34,13 @@ body {
     animation: rotate 3.5s linear 0s infinite normal;
 }
 
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -61,7 +68,7 @@ body {
 }
 
 .nav-icon {
-    transition: all;
+    transition: color 0.2s ease, background-size 0.35s ease;
     width: 42px;
     display: flex;
     align-items: center;
@@ -70,14 +77,18 @@ body {
     color: #929298;
     font-size: 22px;
     position: relative;
+    background-image: linear-gradient(to top, #ffb800 0%, #0b0b0b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 .nav-icon:hover {
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #ffb800);
+    background-size: 100% 100%;
 }
 
 .nav-icon.active {
-    transition: all;
+    transition: color 0.2s ease, background-size 0.35s ease;
     width: 42px;
     display: flex;
     align-items: center;
@@ -86,11 +97,15 @@ body {
     color: #888888;
     font-size: 22px;
     position: relative;
+    background-image: linear-gradient(to top, #ffb800 0%, #0b0b0b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
     
 }
 
 .nav-icon.active:hover {
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #ffb800);
+    background-size: 100% 100%;
 }
 
 .nav-right {
@@ -116,11 +131,47 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    background-image: linear-gradient(to top, #ffb800 0%, #0b0b0b 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: bottom;
+    transition: background-size 0.35s ease, transform 0.2s ease, filter 0.2s ease;
 }
 
 .nav-avatar:hover{
+    background-size: 100% 100%;
     transform: scale(1.1);
     filter: brightness(1.08);
+}
+
+.nav-avatar {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+}
+
+.nav-avatar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to top, #ffb800 0%, #0b0b0b 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nav-avatar:hover::after {
+    transform: scaleY(1);
+}
+
+.nav-avatar img {
+    position: relative;
+    z-index: 2;
+    display: block;
 }
 
 .container {

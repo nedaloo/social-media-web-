@@ -6,48 +6,29 @@
     <link rel="stylesheet" href="signup-style.css">
 </head>
 <body>
-
     <div class="page-container">
-
-        
         <div class="logo-section">
             <div class="logo-icon">
-                <div class="logo"><img src="Hive-logo.svg" alt="logo" width="30"
-                    height="30"></div>
+                <div class="logo"><img src="Hive-logo.svg" alt="logo" width="30" height="30"></div>
                 <b class="logo-text">Hive</b>
             </div>
         </div>
-
-        
         <div class="signup-card">
-
             <p class="tagline"><b>A CALMER PLACE TO CONNECT</b></p>
             <h1 class="page-title"><b>Create your account</b></h1>
             <p class="subtitle">Join your conversations, friends, and groups in one place.</p>
-
-           
-            <form>
+            <form data-auth="register">
                 <p class="form-label"><b>Username</b></p>
-                <input class="form-input" type="text" placeholder="Choose a username">
-
+                <input class="form-input" name="username" type="text" placeholder="Choose a username" required>
                 <p class="form-label"><b>Display Name</b></p>
-                <input class="form-input" type="text" placeholder="How people will see you">
-
+                <input class="form-input" name="display_name" type="text" placeholder="How people will see you">
                 <p class="form-label"><b>Password</b></p>
-                <input class="form-input" type="password" placeholder="8-72 bytes">
-
+                <input class="form-input" name="password" type="password" placeholder="8-72 bytes" minlength="8" required>
                 <button class="create-btn" type="submit"><b>Create Account</b></button>
             </form>
-
-           
-            <div class="login-section">
-                <span class="login-text">Already a member? </span>
-                <a class="login-link" href="../log%20in/index%20.html"><b>Log in</b></a>
-            </div>
-
+            <div class="login-section"><span class="login-text">Already a member? </span><a class="login-link" href="../log%20in/index%20.html"><b>Log in</b></a></div>
         </div>
-
     </div>
-
+    <script src="../auth/auth.js"></script>
 </body>
 </html>
